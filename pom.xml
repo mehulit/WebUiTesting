@@ -12,10 +12,55 @@
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <maven.compiler.source>1.7</maven.compiler.source>
-    <maven.compiler.target>1.7</maven.compiler.target>
+    <maven.compiler.source>1.8</maven.compiler.source>
+    <maven.compiler.target>1.8</maven.compiler.target>
   </properties>
-
+  
+  <profiles>
+	  <profile>
+		  <id>regression</id>
+		  <build>
+		  <pluginManagement>
+		  <plugins>
+		  <plugin>
+		  <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-surefire-plugin</artifactId>
+          <version>2.22.1</version>
+          <configuration>
+          <suiteXmlFiles>
+            <suiteXmlFile>testsuites/regression.xml</suiteXmlFile>
+          </suiteXmlFiles>
+        </configuration>
+        </plugin>
+        </plugins>
+        </pluginManagement>
+        </build>
+      </profile>
+      
+      <profile>
+		  <id>regression2</id>
+		  <build>
+		  <pluginManagement>
+		  <plugins>
+		  <plugin>
+		  <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-surefire-plugin</artifactId>
+          <version>2.22.1</version>
+          <configuration>
+          <suiteXmlFiles>
+            <suiteXmlFile>testsuites/regression2.xml</suiteXmlFile>
+          </suiteXmlFiles>
+        </configuration>
+        </plugin>
+        </plugins>
+        </pluginManagement>
+        </build>
+      </profile>
+	
+      
+	</profiles>
+	
+	
   <dependencies>
     
     <dependency>
@@ -63,20 +108,6 @@
         <plugin>
           <artifactId>maven-resources-plugin</artifactId>
           <version>3.0.2</version>
-        </plugin>
-        <plugin>
-          <artifactId>maven-compiler-plugin</artifactId>
-          <version>3.8.0</version>
-        </plugin>
-        <plugin>
-		  <groupId>org.apache.maven.plugins</groupId>
-          <artifactId>maven-surefire-plugin</artifactId>
-          <version>2.22.1</version>
-          <configuration>
-          <suiteXmlFiles>
-            <suiteXmlFile>testng.xml</suiteXmlFile>
-          </suiteXmlFiles>
-        </configuration>
         </plugin>
         <plugin>
           <artifactId>maven-jar-plugin</artifactId>
