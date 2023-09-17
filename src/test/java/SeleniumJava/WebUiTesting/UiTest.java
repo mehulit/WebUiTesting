@@ -72,7 +72,7 @@ public class UiTest {
 		{
 			if(chekboxs.getText().equalsIgnoreCase(" Family and Friends"))
 			{
-				
+				System.out.println("");
 			}
 		}
 		
